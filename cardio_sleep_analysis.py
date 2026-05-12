@@ -2,11 +2,11 @@
 Sleep Health Dataset — Machine Learning Analysis
 =================================================
 Task A (Classification): Predict sleep_disorder_risk
-      → Healthy / Mild / Moderate / Severe
+      -> Healthy / Mild / Moderate / Severe
 
-Task B (Regression):     Predict cognitive_performance_score (0–100)
+Task B (Regression)    : Predict cognitive_performance_score (0–100)
 
-Models used (matching course syllabus):
+Models used:
   Supervised Learning:
     - Logistic Regression         (Task A baseline)
     - Decision Tree               (Task A & B)
@@ -206,7 +206,7 @@ plt.suptitle('Sleep Health Dataset — Exploratory Overview',
 plt.tight_layout()
 plt.savefig('./output/sleep_eda.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: sleep_eda.png")
+print("  Saved: sleep_eda.png")
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TASK A — Classification: Predict sleep_disorder_risk
@@ -324,7 +324,7 @@ axes[1].set_title('Task A — Class Balance (Training Set)', fontweight='bold')
 plt.tight_layout()
 plt.savefig('./output/taskA_class_dist.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: taskA_class_dist.png")
+print("  Saved: taskA_class_dist.png")
 
 # Fig A2: Confusion matrix — Random Forest
 fig, axes = plt.subplots(1, 2, figsize=(13, 5))
@@ -341,7 +341,7 @@ axes[1].set_xlabel('Predicted'); axes[1].set_ylabel('True')
 plt.tight_layout()
 plt.savefig('./output/taskA_confusion_rf.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: taskA_confusion_rf.png")
+print("  Saved: taskA_confusion_rf.png")
 
 # Fig A3: ROC (RF per-class) + all-model comparison bar chart
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
@@ -376,7 +376,7 @@ axes[1].legend(); axes[1].grid(axis='y', alpha=0.4)
 plt.tight_layout()
 plt.savefig('./output/taskA_roc.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: taskA_roc.png")
+print("  Saved: taskA_roc.png")
 
 # Fig A4: Feature importance — Gini + Permutation
 print("  Computing permutation importance for RF (Task A)...")
@@ -409,7 +409,7 @@ plt.suptitle('Task A — Feature Importance Analysis (Random Forest)',
 plt.tight_layout()
 plt.savefig('./output/taskA_feature_importance.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: taskA_feature_importance.png")
+print("  Saved: taskA_feature_importance.png")
 
 # Fig A5: Decision Tree visualization (depth=3 for readability)
 dt_viz_A = DecisionTreeClassifier(max_depth=3, min_samples_leaf=500,
@@ -425,7 +425,7 @@ ax.set_title('Task A — Decision Tree (depth=3, for interpretability)',
 plt.tight_layout()
 plt.savefig('./output/taskA_dt_visualization.png', dpi=130, bbox_inches='tight')
 plt.show()
-print("Saved: taskA_dt_visualization.png")
+print("  Saved: taskA_dt_visualization.png")
 
 # Fig A6: Logistic Regression coefficients per class
 lr_clf = models_A['Logistic Regression'].named_steps['clf']
@@ -446,7 +446,7 @@ plt.suptitle('Task A — Logistic Regression: Coefficients by Class\n'
 plt.tight_layout()
 plt.savefig('./output/taskA_lr_coefficients.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: taskA_lr_coefficients.png")
+print("  Saved: taskA_lr_coefficients.png")
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TASK B — Regression: Predict cognitive_performance_score
@@ -539,7 +539,7 @@ axes[1].grid(alpha=0.3)
 plt.tight_layout()
 plt.savefig('./output/taskB_target_dist.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: taskB_target_dist.png")
+print("  Saved: taskB_target_dist.png")
 
 # Fig B2: Model comparison — RMSE, MAE, R2
 fig, axes = plt.subplots(1, 3, figsize=(16, 5))
@@ -567,7 +567,7 @@ plt.suptitle('Task B — Regression Model Performance Comparison',
 plt.tight_layout()
 plt.savefig('./output/taskB_model_comparison.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: taskB_model_comparison.png")
+print("  Saved: taskB_model_comparison.png")
 
 # Fig B3: Residual plots — all four models
 fig, axes = plt.subplots(2, 2, figsize=(14, 10))
@@ -588,7 +588,7 @@ plt.suptitle('Task B — Residual Analysis (All Models)', fontsize=13, fontweigh
 plt.tight_layout()
 plt.savefig('./output/taskB_residuals.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: taskB_residuals.png")
+print("  Saved: taskB_residuals.png")
 
 # Fig B4: Feature importance — Gini + Permutation (Random Forest)
 print("  Computing permutation importance for RF (Task B)...")
@@ -621,7 +621,7 @@ plt.suptitle('Task B — Feature Importance Analysis (Random Forest Regressor)',
 plt.tight_layout()
 plt.savefig('./output/taskB_feature_importance.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: taskB_feature_importance.png")
+print("  Saved: taskB_feature_importance.png")
 
 # Fig B5: Predicted vs Actual + error distribution (best model = RF)
 rf_pred_B = preds_B['Random Forest']
@@ -648,7 +648,7 @@ axes[1].legend(); axes[1].grid(axis='y', alpha=0.4)
 plt.tight_layout()
 plt.savefig('./output/taskB_predicted_vs_actual.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: taskB_predicted_vs_actual.png")
+print("  Saved: taskB_predicted_vs_actual.png")
 
 # Fig B6: Decision Tree Regressor visualization (depth=3)
 dt_viz_B = DecisionTreeRegressor(max_depth=3, min_samples_leaf=500,
@@ -662,7 +662,7 @@ ax.set_title('Task B — Decision Tree Regressor (depth=3, for interpretability)
 plt.tight_layout()
 plt.savefig('./output/taskB_dt_visualization.png', dpi=130, bbox_inches='tight')
 plt.show()
-print("Saved: taskB_dt_visualization.png")
+print("  Saved: taskB_dt_visualization.png")
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Final Summary
@@ -727,8 +727,6 @@ print("\nStart EXTRA Task!\n")
 
 Cardiovascular Disease Risk & Sleep Quality Relationship Analysis
 =================================================================
-Dataset: sleep_health_dataset.csv (100,000 records)
-
 Analysis Framework:
   1. Construct a composite Cardio Risk Index (CRI)
   2. Exploratory Analysis: Sleep metrics vs. cardiovascular risk
@@ -740,43 +738,43 @@ Analysis Framework:
 # ────────────────────────────────────────────────────────────────
 # 0. Imports
 # ────────────────────────────────────────────────────────────────
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as gridspec
-import seaborn as sns
-from scipy import stats
+# import pandas as pd
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import matplotlib.gridspec as gridspec
+# import seaborn as sns
+# from scipy import stats
 
-# Machine Learning
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, StandardScaler
-from sklearn.pipeline import Pipeline
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier, plot_tree
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.utils import resample
-from sklearn.metrics import (
-    classification_report, confusion_matrix,
-    ConfusionMatrixDisplay, accuracy_score,
-    f1_score, roc_auc_score, roc_curve, auc
-)
+# # Machine Learning
+# from sklearn.model_selection import train_test_split
+# from sklearn.preprocessing import LabelEncoder, StandardScaler
+# from sklearn.pipeline import Pipeline
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.tree import DecisionTreeClassifier, plot_tree
+# from sklearn.ensemble import RandomForestClassifier
+# from sklearn.svm import SVC
+# from sklearn.utils import resample
+# from sklearn.metrics import (
+#     classification_report, confusion_matrix,
+#     ConfusionMatrixDisplay, accuracy_score,
+#     f1_score, roc_auc_score, roc_curve, auc
+# )
 
-import warnings
-warnings.filterwarnings('ignore')
+# import warnings
+# warnings.filterwarnings('ignore')
 
-RANDOM_STATE = 42
-np.random.seed(RANDOM_STATE)
+# RANDOM_STATE = 42
+# np.random.seed(RANDOM_STATE)
 
 # ────────────────────────────────────────────────────────────────
 # 1. Load Data
 # ────────────────────────────────────────────────────────────────
-print("=" * 65)
-print("  Cardiovascular Risk × Sleep Quality Relationship Analysis")
-print("=" * 65)
+# print("=" * 65)
+# print("  Cardiovascular Risk × Sleep Quality Relationship Analysis")
+# print("=" * 65)
 
-df = pd.read_csv("./dataset/sleep_health_dataset.csv")
-print(f"Dataset size: {df.shape[0]:,} rows × {df.shape[1]} columns")
+# df = pd.read_csv("./dataset/sleep_health_dataset.csv")
+# print(f"Dataset size: {df.shape[0]:,} rows × {df.shape[1]} columns")
 
 # ────────────────────────────────────────────────────────────────
 # 2. Construct the Composite Cardio Risk Index (CRI)
@@ -877,7 +875,7 @@ fig.suptitle('Sleep Metric Distributions by Cardiovascular Risk Group (Boxplots)
 plt.tight_layout()
 plt.savefig('./output/cardio_sleep_boxplots.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: cardio_sleep_boxplots.png")
+print("  Saved: cardio_sleep_boxplots.png")
 
 # ── Figure 2: CRI vs. Sleep Quality Score Scatter Plot ────────────────────
 fig, axes = plt.subplots(1, 2, figsize=(14, 6))
@@ -932,7 +930,7 @@ for i, row in cri_by_sq.iterrows():
 plt.tight_layout()
 plt.savefig('./output/cardio_cri_scatter.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: cardio_cri_scatter.png")
+print("  Saved: cardio_cri_scatter.png")
 
 # ── Figure 3: Sleep Disorder Risk Level vs. CRI Distribution ──────────────
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
@@ -983,7 +981,7 @@ for i, row in mhc_cri.iterrows():
 plt.tight_layout()
 plt.savefig('./output/cardio_disorder_mental.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: cardio_disorder_mental.png")
+print("  Saved: cardio_disorder_mental.png")
 
 # ────────────────────────────────────────────────────────────────
 # 4. Statistical Testing: Verify Significance of Sleep Metric
@@ -1063,7 +1061,7 @@ for i_col, (col, label) in enumerate(sleep_metrics.items()):
 plt.tight_layout()
 plt.savefig('./output/cardio_sleep_comparison.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: cardio_sleep_comparison.png")
+print("  Saved: cardio_sleep_comparison.png")
 
 # ────────────────────────────────────────────────────────────────
 # 5. Machine Learning: Task C — Predicting High CVD Risk (Binary Classification)
@@ -1234,7 +1232,7 @@ axes[2].grid(alpha=0.3)
 plt.tight_layout()
 plt.savefig('./output/cardio_task_c_performance.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: cardio_task_c_performance.png")
+print("  Saved: cardio_task_c_performance.png")
 
 # ── Figure 6: Random Forest Feature Importance ──────────────────────────
 fi = pd.Series(rf_C.feature_importances_, index=FEATURE_NAMES).sort_values(ascending=False)
@@ -1264,7 +1262,7 @@ axes[1].set_title('Task C — Decision Tree (depth=3)', fontsize=12, fontweight=
 plt.tight_layout()
 plt.savefig('./output/cardio_fi_and_tree.png', dpi=130, bbox_inches='tight')
 plt.show()
-print("Saved: cardio_fi_and_tree.png")
+print("  Saved: cardio_fi_and_tree.png")
 
 # ── Figure 7: Logistic Regression Coefficient Analysis ──────────────────
 lr_coef = pd.Series(
@@ -1283,7 +1281,7 @@ ax.grid(axis='x', alpha=0.4)
 plt.tight_layout()
 plt.savefig('./output/cardio_lr_coef.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("Saved: cardio_lr_coef.png")
+print("  Saved: cardio_lr_coef.png")
 
 # ────────────────────────────────────────────────────────────────
 # 7. Conclusion Summary
