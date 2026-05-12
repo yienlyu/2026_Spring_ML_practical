@@ -322,9 +322,9 @@ axes[1].pie(pcts,
             wedgeprops={'edgecolor': 'white', 'linewidth': 1.5})
 axes[1].set_title('Task A — Class Balance (Training Set)', fontweight='bold')
 plt.tight_layout()
-plt.savefig('taskA_class_dist.png', dpi=150, bbox_inches='tight')
+plt.savefig('./output/taskA_class_dist.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("  Saved: taskA_class_dist.png")
+print("Saved: taskA_class_dist.png")
 
 # Fig A2: Confusion matrix — Random Forest
 fig, axes = plt.subplots(1, 2, figsize=(13, 5))
@@ -718,7 +718,9 @@ for fname, desc in [
 ]:
     print(f"  {fname:<35} — {desc}")
 
-    
+
+
+print("\nStart EXTRA Task!\n")
 
 """
 **EXTRA**
